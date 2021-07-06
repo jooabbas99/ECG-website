@@ -1,0 +1,1 @@
+web: gunicorn Dalel_Elmadares.wsgi --log-file -
