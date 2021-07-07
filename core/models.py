@@ -12,7 +12,7 @@ class ECGFile(models.Model):
         (3, 'Right bundle branch block beat'),
         (4, 'Atrial premature beat'),
     )
-    arythmia_type = models.CharField(choices=ARRHYTHMIA_CHOICE, max_length=50,
+    types = models.CharField(choices=ARRHYTHMIA_CHOICE, max_length=50,
                                      null=True, blank=True)
     patient = models.ForeignKey('Patient',on_delete=models.CASCADE)
     signal = models.ImageField(upload_to='media/')

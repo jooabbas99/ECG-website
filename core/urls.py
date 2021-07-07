@@ -5,6 +5,6 @@ from django.conf.urls.static import static
 from .views import *
 
 urlpatterns = [
-    path('', home),
+    path('', home, name='home'),
     path('form', apply.as_view(), name='form')
 ] 

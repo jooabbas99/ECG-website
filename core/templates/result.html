@@ -9,12 +9,11 @@
     <title>result page</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
+<!-- Favicons -->
+<link href="{% static 'assets/img/ecg-monitor.png' %}" rel="icon">
+<link href="{{% static 'assets/img/ecg-monitor.png' %}" rel="apple-touch-icon">
 
-    <!-- Favicons -->
-    <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
-    <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
+<!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
@@ -45,17 +44,17 @@
     <header id="header" class="fixed-top header-inner-pages ">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo me-auto"><a href="index.html">ECG Classification</a></h1>
+            <h1 class="logo me-auto"><a href="{% url 'home' %}">ECG Classification</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="/index.html#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="/index.html#about">About</a></li>
-                    <li><a class="nav-link scrollto" href="/index.html#ECG">ECG</a></li>
-                    <li><a class="nav-link scrollto" href="/index.html#team">Team</a></li>
-                    <li><a class="getstarted scrollto" href="/index.html#start">Get Started</a></li>
+                    <li><a class="nav-link scrollto active" href="{% url 'home' %}">Home</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'home' %}">About</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'home' %}">ECG</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'home' %}">Team</a></li>
+                    <li><a class="getstarted scrollto" href="{% url 'home' %}">Get Started</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -71,13 +70,47 @@
             <div class="container">
 
                 <ol>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="{% url 'home' %}">Home</a></li>
                     <li>Result Page</li>
                 </ol>
                 <h2>Result Page</h2>
 
             </div>
         </section><!-- End Breadcrumbs -->
+        <section>
+            <div class="container">
+                <div class="row">
+            <table>
+                <thead>
+                    <th>Class</th>
+                    <th>Arrhythmia Type</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>Normal beat</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Left bundle branch block beat</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Premature ventricular contraction</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Right bundle branch block beat</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Atrial premature beat</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            </div>
+        </section>
         <section>
 
             <div class="container">
@@ -99,7 +132,7 @@
                                         <td class="w-50">
                                             <img src="{{signal.signal.url}}" class="img-fluid img-thumbnail" alt="Sheep">
                                         </td>
-                                        <td>{{signal.get_arythmia_type_display}} </td>
+                                        <td>{{signal.get_types_display|safe}} </td>
                                     </tr>
                                 {% endfor %}
                                     
@@ -116,29 +149,9 @@
     <!-- ======= Footer ======= -->
     <footer id="footer">
 
-        <div class="footer-newsletter">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <h4>Join Our Newsletter</h4>
-                        <p>Get All News About ECG and Heart Cear Information</p>
-                        <form action="" method="post">
-                            <input type="email" name="email"><input type="submit" value="Subscribe">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="container footer-bottom clearfix">
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
-                Designed by BootstrapMade
-            </div>
-        </div>
+
+
     </footer><!-- End Footer -->
 
     <div id="preloader"></div>

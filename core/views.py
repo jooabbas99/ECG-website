@@ -25,15 +25,13 @@ class apply(View):
         signal = read_signal(patient.ecg_signal)
         filter = filter_data(data=signal)
         segment = segmentation(data=filter[0])
-        print(len(segment[0]))
-        print(segment[0])
         results = predict_model_class(data=segment)
 
 
         for i in range(len(segment)):
             plot_ecg_results(segment[i], results[i], patient.id)
             image_path = f'./media/signal_class/signal{patient.id}{results[i]}.png'
-            ecg = ECGFile(arythmia_type=results[i],
+            ecg = ECGFile(types=results[i],
                           patient=patient,
                           signal=image_path)
             ecg.save()
@@ -43,13 +41,6 @@ class apply(View):
         }
         return render(request,'result.html',context=context)
 
-def apply_ecg(request):
-    patient = Patient.objects.get(id=id)
-    signal = read_signal(patient.ecg_signal)
-    segment = segmentation(data=signal)
-    filter = filter_data(data=segment)
-    results = predict_model_class(data=filter)
-    return render(results)
 
 def home(request):
     return render(request,'index.html')

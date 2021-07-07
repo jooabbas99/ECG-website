@@ -11,8 +11,8 @@
     <meta content="ECG AI " name="keywords">
 
     <!-- Favicons -->
-    <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
-    <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+    <link href="{% static 'assets/img/ecg-monitor.png' %}" rel="icon">
+    <link href="{{% static 'assets/img/ecg-monitor.png' %}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -317,7 +317,7 @@
                     </div>
 
                     <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
-                        style='background-image: url("assets/img/heart.png");' data-aos="zoom-in" data-aos-delay="150">
+                        style='background-image: url({% static 'assets/img/heart.png'%});' data-aos="zoom-in" data-aos-delay="150">
                         &nbsp;</div>
                 </div>
 
@@ -450,9 +450,24 @@
 
                     <div class="col-lg-6 mt-4">
                         <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="800">
-                            <div class="pic"><img src="" style="width:500;height:500;" class="img-fluid" alt=""></div>
+                            <div class="pic"><img src="{% static 'assets/img/team/nabil.jpg' %}" style="width:500;height:500;" class="img-fluid" alt=""></div>
                             <div class="member-info">
                                 <h4>Nabil Ehab</h4>
+                                <div class="social">
+                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    <a href=""><i class="ri-facebook-fill"></i></a>
+                                    <a href=""><i class="ri-instagram-fill"></i></a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mt-4">
+                        <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="800">
+                            <div class="pic"><img src="{% static 'assets/img/team/adel.jpg' %}" style="width:500;height:500;"
+                                    class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>Mohamed Adel</h4>
                                 <div class="social">
                                     <a href=""><i class="ri-twitter-fill"></i></a>
                                     <a href=""><i class="ri-facebook-fill"></i></a>
@@ -536,21 +551,7 @@
     <!-- End #main -->
 
     <!-- ======= Footer ======= -->
-    <footer id="footer">
-
-        <div class="footer-newsletter">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <h4>Join Our Newsletter</h4>
-                        <p>Get All News About ECG and Heart Cear Information</p>
-                        <form action="" method="post">
-                            <input type="email" name="email"><input type="submit" value="Subscribe">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+ 
 
         <div class="container footer-bottom clearfix">
             <div class="credits">
