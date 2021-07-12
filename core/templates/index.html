@@ -139,13 +139,34 @@
                                         <input type="file" accept=".csv" name="file">
                                     </div>
                                     <hr>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Submit
+                                    </button>
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+
+                                                </div>
+                                                <div class="modal-body">
+                                                    we will send your test result as soon as possible
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
                                 </form>
                             </div>
 
                         </div>
                     </div>
-
+                    <!-- Modal -->
+                    
                     <div class="col-4 mt-5 mt-lg-0 d-flex align-items-stretch">
                         <div class="info">
                             <h3>Some Note's for CSV Signal files</h3>
@@ -579,6 +600,14 @@
 
     <!-- Template Main JS File -->
     <script src="{% static 'assets/js/main.js' %}"></script>
+    <script>
+        var myModal = document.getElementById('myModal')
+            var myInput = document.getElementById('myInput')
+
+            myModal.addEventListener('shown.bs.modal', function () {
+                myInput.focus()
+            })
+    </script>
 
 </body>
 
